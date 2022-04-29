@@ -1,28 +1,13 @@
 <template>
-  <div class="okb-home-section home wf-section">
+  <div class="okb-home-section">
     <div class="okb-titlesection">
       <div class="okb-titlecontainer">
-        <div class="div-block"><img src="/img/Bear-Group.svg" loading="lazy" alt="" class="image"><img
-            src="/img/TitleSection-Bears.svg" loading="lazy" alt="" class="image-2"></div>
-        <div class="div-block-2"><img src="/img/OKB-O.svg" loading="lazy" alt="" class="okb-title-o-hover"><img
-            src="/img/OKB-K.svg" loading="lazy" alt="" class="okb-title-k-hover"><img src="/img/OKB-A.svg"
-            loading="lazy" alt="" class="okb-title-a-hover"><img src="/img/OKB-Y.svg" loading="lazy" alt=""
-            class="okb-title-y-hover"></div>
-        <div class="colour-okay">
-          <div class="o-div"><img src="/img/Green-O.png" loading="lazy" alt="" class="image-10"></div>
-          <div class="k-div"><img src="/img/Blue-K.png" loading="lazy" alt="" class="image-11"></div>
-          <div class="a-div"><img src="/img/Purple-A.png" loading="lazy" alt="" class="image-8"></div>
-          <div class="y-div"><img src="/img/Yellow_Y.png" loading="lazy" alt="" class="image-9"><img
-              src="/img/TitleSection-Bears.svg" loading="lazy" alt="" class="image-2"></div>
-        </div>
-        <div class="colour-okay-tablet">
-          <div class="div-block-4">
-            <div class="o-div"><img src="/img/Green-O.png" loading="lazy" alt=""></div>
-            <div class="k-div"><img src="/img/Blue-K.png" loading="lazy" alt=""></div>
-            <div class="a-div"><img src="/img/Purple-A.png" loading="lazy" alt="" class="image-8"></div>
-            <div class="o-div-copy"><img src="/img/Yellow_Y.png" loading="lazy" alt=""></div><img
-              src="/img/TitleSection-Bears.svg" loading="lazy" alt="" class="image-2">
+        <div class="okb-okay">
+          <div v-for="letter in word" class="okb-letter" :class="`okb-letter-${letter}`">
+            <img :src="`/img/OKB-${letter.toUpperCase()}.png`" class="okb-image" :class="`okb-image-${letter}`" loading="lazy" alt="">
+            <img :src="`/img/OKB-${letter.toUpperCase()}.svg`" class="okb-image-hover" :class="`okb-image-${letter}-hover`" loading="lazy" alt="">
           </div>
+          <img src="/img/TitleSection-Bears.svg" loading="lazy" alt="" class="okb-title-section-bears">
         </div>
         <div class="okb-hover-titles">
           <div class="annie-are-you" style="display: none;">Annie are you</div>
@@ -31,26 +16,112 @@
           <div class="bear-markets-are" style="display: none;">Bear markets are</div>
           <div class="emptytextblock">This is some text inside of a div block.</div>
         </div>
-        <div class="black-okay">
-          <div class="o-div"><img src="/img/OKB-O.svg" loading="lazy"
-              data-w-id="28111576-a015-7743-53a5-4b6d09f7c00d" alt="" class="okb-title-o-hover-copy">
-          </div>
-          <div class="k-div"><img src="/img/OKB-K.svg" loading="lazy"
-              data-w-id="28111576-a015-7743-53a5-4b6d09f7c00f" alt="" class="okb-title-k-hover-copy">
-          </div>
-          <div class="a-div"><img src="/img/OKB-A.svg" loading="lazy"
-              data-w-id="28111576-a015-7743-53a5-4b6d09f7c011" alt="" class="okb-title-a-hover-copy">
-          </div>
-          <div class="y-div">
-            <div class="div-block-5"><img src="/img/OKB-Y.svg" loading="lazy"
-                data-w-id="28111576-a015-7743-53a5-4b6d09f7c014" alt="" class="okb-title-y-hover-copy">
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+export default {
+  data() {
+    return {
+      word: "okay"
+    }
+  }
+}
 </script>
+
+<style lang="scss">
+.okb-home-section {
+  position: absolute;
+  display: flex;
+  height: 100vh;
+  max-width: 100%;
+  padding: 0rem 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.okb-titlesection {
+  position: static;
+  display: flex;
+  height: 800px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.okb-titlecontainer {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.okb-okay {
+  width: 860px;
+  height: 480px;
+  position: absolute;
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+  align-items: stretch;
+
+  .okb-letter {
+    position: relative;
+
+    .okb-image {
+      height: 100%;
+      max-width: none;
+    }
+
+    .okb-image-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .okb-image-k,
+    .okb-image-k-hover {
+      margin-left: -20px;
+    }
+
+    .okb-image-a,
+    .okb-image-a-hover {
+      margin-left: -90px;
+    }
+
+    .okb-image-y,
+    .okb-image-y-hover {
+      margin-left: 20px;
+    }
+
+    .okb-image-hover {
+      height: 100%;
+      max-width: none;
+      opacity: 1;
+      mix-blend-mode: multiply;
+    }
+
+    .okb-image-hover:hover {
+      opacity: 0;
+    }
+  }
+
+  .okb-title-section-bears {
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+</style>
