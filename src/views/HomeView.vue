@@ -1,34 +1,47 @@
-<template>
-  <div class="okb-home-section">
-    <div class="okb-titlesection">
-      <div class="okb-titlecontainer">
-        <div class="okb-okay">
-          <div v-for="letter in word" class="okb-letter" :class="`okb-letter-${letter}`">
-            <img :src="`/img/OKB-${letter.toUpperCase()}.png`" class="okb-image" :class="`okb-image-${letter}`" loading="lazy" alt="">
-            <img :src="`/img/OKB-${letter.toUpperCase()}.svg`" class="okb-image-hover" :class="`okb-image-${letter}-hover`" loading="lazy" alt="">
-          </div>
-          <img src="/img/TitleSection-Bears.svg" loading="lazy" alt="" class="okb-title-section-bears">
-        </div>
-        <div class="okb-hover-titles">
-          <div class="annie-are-you" style="display: none;">Annie are you</div>
-          <div class="everything-s-going-to-be" style="display: none;">Everything’s going to be</div>
-          <div class="weird-flex-but" style="display: none;">Weird flex but</div>
-          <div class="bear-markets-are" style="display: none;">Bear markets are</div>
-          <div class="emptytextblock">This is some text inside of a div block.</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+.okb-home-section
+  .okb-titlesection
+    .okb-titlecontainer
+      .okb-okay
+        .okb-letter(v-for="letter in word" :class="`okb-letter-${letter}`")
+          img.okb-image(
+            :src="`/img/OKB-${letter.toUpperCase()}.png`"
+            :class="`okb-image-${letter}`"
+            loading="lazy"
+            :alt="`okb-image-${letter}`"
+          )
+          img.okb-image-hover(
+            :src="`/img/OKB-${letter.toUpperCase()}.svg`"
+            :class="`okb-image-${letter}-hover`"
+            @mouseover="hover = letter"
+            @mouseleave="hover = ''"
+            loading="lazy"
+            :alt="`okb-image-${letter}-hover`"
+          )
+        img.okb-title-section-bears(src="/img/TitleSection-Bears.svg" loading="lazy" alt="okb-title-section-bears")
+      .okb-hover-titles
+        .okb-hover-title(
+          v-for="letter in word"
+          :class="`okb-hover-title-${letter}`"
+          v-show="hover === letter"
+        ) {{ titles[letter] }}
 </template>
 
 <script>
 export default {
   data() {
     return {
-      word: "okay"
-    }
-  }
-}
+      word: "okay",
+      titles: {
+        o: "Annie are you",
+        k: "Everything’s going to be",
+        a: "Weird flex but",
+        y: "Bear markets are",
+      },
+      hover: "",
+    };
+  },
+};
 </script>
 
 <style lang="scss">
@@ -109,10 +122,10 @@ export default {
       max-width: none;
       opacity: 1;
       mix-blend-mode: multiply;
-    }
 
-    .okb-image-hover:hover {
-      opacity: 0;
+      &:hover {
+        opacity: 0;
+      }
     }
   }
 
@@ -124,4 +137,72 @@ export default {
   }
 }
 
+.okb-hover-titles {
+  position: relative;
+  top: -32vh;
+  left: auto;
+  top: -34vh;
+  right: auto;
+  bottom: auto;
+  display: flex;
+  width: 80%;
+  min-height: 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+
+  .okb-hover-title {
+    position: absolute;
+    color: #bb9772;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .okb-titlesection {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+
+  .okb-hover-titles {
+    top: -32vh;
+  }
+
+  .okb-titlecontainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .okb-okay {
+    width: 100%;
+    max-height: 70vh;
+    height: auto;
+    padding: 0 15px;
+
+    .okb-image-hover,
+    .okb-image-a,
+    .okb-image-y,
+    .okb-title-section-bears {
+      display: none;
+    }
+
+    .okb-letter {
+      .okb-image-o,
+      .okb-image-k {
+        height: 100%;
+        width: 100%;
+      }
+
+      .okb-image-k {
+        margin-left: 0;
+      }
+    }
+  }
+}
 </style>
