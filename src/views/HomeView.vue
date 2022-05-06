@@ -1,4 +1,5 @@
 <template lang="pug">
+Header
 .okb-home-section
   .okb-titlesection
     .okb-titlecontainer
@@ -28,7 +29,10 @@
 </template>
 
 <script>
+import Header from "@/components/Header.vue";
+
 export default {
+  components: { Header },
   data() {
     return {
       word: "okay",
@@ -180,10 +184,9 @@ export default {
 
 @media screen and (max-width: 991px) {
   .okb-okay {
-    width: 100%;
     max-height: 70vh;
     height: auto;
-    padding: 0 15px;
+    padding: 0;
 
     .okb-image-hover,
     .okb-image-a,
