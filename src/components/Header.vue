@@ -66,7 +66,7 @@ export default {
       socialLinks: [
         {
           name: "twitter",
-          href: "twitter.com/okaybears",
+          href: "twitter.com/oasis_okaybears",
           isAvailable: true,
           width: "19",
           height: "15",
@@ -75,7 +75,7 @@ export default {
         },
         {
           name: "discord",
-          href: "discord.gg/bearwithus",
+          href: "discord.gg/DSPTx2Xf73",
           isAvailable: false,
           width: "20",
           height: "15",
