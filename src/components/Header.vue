@@ -92,7 +92,7 @@ export default {
 .okb-navbar {
   position: relative;
   z-index: 200000000;
-  width: 100%;
+  width: 100vw;
   height: 100px;
   max-width: 100%;
   flex: 0 auto;
@@ -101,7 +101,7 @@ export default {
   .nav-container {
     display: flex;
     height: 100px;
-    max-width: 100%;
+    max-width: 100vw;
     margin-right: auto;
     margin-left: auto;
     padding-right: 30px;
@@ -263,8 +263,6 @@ export default {
 
 .okb-nav-overlay {
   position: absolute;
-  overflow: hidden;
-  display: none;
   top: 0;
   left: 0;
   width: calc(100vw - 60px);
@@ -314,7 +312,7 @@ export default {
     bottom: 0%;
     z-index: 3;
     display: flex;
-    padding: 20px;
+    padding: 20px 30px;
     justify-content: flex-start;
     background-image: linear-gradient(90deg, #008056, transparent 45%);
 
@@ -343,6 +341,12 @@ export default {
   .regular-links,
   .social-links {
     display: none;
+  }
+
+  @media (orientation: landscape) {
+    .okb-nav-overlay .regular-links {
+      padding-top: 20px;
+    }
   }
 
   .menu-button {

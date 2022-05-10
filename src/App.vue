@@ -9,8 +9,9 @@ router-view
 <style>
 html {
   font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 body {
@@ -23,7 +24,6 @@ body {
   font-family: Outfit, sans-serif;
   font-size: 24px;
   margin: 0;
-  overflow: hidden;
 }
 
 article,

@@ -188,6 +188,10 @@ export default {
     height: auto;
     padding: 0;
 
+    @media (orientation: landscape) {
+      height: 90%;
+    }
+
     .okb-image-hover,
     .okb-image-a,
     .okb-image-y,
