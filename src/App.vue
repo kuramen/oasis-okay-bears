@@ -23,6 +23,7 @@ body {
   font-family: Outfit, sans-serif;
   font-size: 24px;
   margin: 0;
+  overflow: hidden;
 }
 
 article,
