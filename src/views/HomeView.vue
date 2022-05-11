@@ -85,7 +85,7 @@ export default {
 
 .oob-okay {
   width: 860px;
-  height: 480px;
+  height: 420px;
   position: absolute;
   display: flex;
   max-width: 100%;
@@ -137,7 +137,7 @@ export default {
     height: 50%;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 50px;
   }
 }
 

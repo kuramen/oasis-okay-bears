@@ -16,7 +16,8 @@ html {
 
 body {
   display: flex;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -24,6 +25,7 @@ body {
   font-family: Outfit, sans-serif;
   font-size: 24px;
   margin: 0;
+  overflow: hidden;
 }
 
 article,
