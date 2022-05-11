@@ -1,29 +1,29 @@
 <template lang="pug">
 Header
-.okb-home-section
-  .okb-titlesection
-    .okb-titlecontainer
-      .okb-okay
-        .okb-letter(v-for="letter in word" :class="`okb-letter-${letter}`")
-          img.okb-image(
-            :src="`/img/OKB-${letter.toUpperCase()}.png`"
-            :class="`okb-image-${letter}`"
+.oob-home-section
+  .oob-titlesection
+    .oob-titlecontainer
+      .oob-okay
+        .oob-letter(v-for="letter in word" :class="`oob-letter-${letter}`")
+          img.oob-image(
+            :src="`/img/OOB-${letter.toUpperCase()}.png`"
+            :class="`oob-image-${letter}`"
             loading="lazy"
-            :alt="`okb-image-${letter}`"
+            :alt="`oob-image-${letter}`"
           )
-          img.okb-image-hover(
-            :src="`/img/OKB-${letter.toUpperCase()}.svg`"
-            :class="`okb-image-${letter}-hover`"
+          img.oob-image-hover(
+            :src="`/img/OOB-${letter.toUpperCase()}.svg`"
+            :class="`oob-image-${letter}-hover`"
             @mouseover="hover = letter"
             @mouseleave="hover = ''"
             loading="lazy"
-            :alt="`okb-image-${letter}-hover`"
+            :alt="`oob-image-${letter}-hover`"
           )
-        img.okb-title-section-bears(src="/img/TitleSection-Bears.svg" loading="lazy" alt="okb-title-section-bears")
-      .okb-hover-titles
-        .okb-hover-title(
+        img.oob-title-section-bears(src="/img/TitleSection-Bears.svg" loading="lazy" alt="oob-title-section-bears")
+      .oob-hover-titles
+        .oob-hover-title(
           v-for="letter in word"
-          :class="`okb-hover-title-${letter}`"
+          :class="`oob-hover-title-${letter}`"
           v-show="hover === letter"
         ) {{ titles[letter] }}
 </template>
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss">
-.okb-home-section {
+.oob-home-section {
   position: absolute;
   display: flex;
   height: 100vh;
@@ -61,7 +61,7 @@ export default {
   flex: 1;
 }
 
-.okb-titlesection {
+.oob-titlesection {
   position: static;
   display: flex;
   height: 800px;
@@ -74,7 +74,7 @@ export default {
   grid-template-rows: auto auto;
 }
 
-.okb-titlecontainer {
+.oob-titlecontainer {
   display: flex;
   width: 100vw;
   height: 100%;
@@ -83,7 +83,7 @@ export default {
   align-items: center;
 }
 
-.okb-okay {
+.oob-okay {
   width: 860px;
   height: 480px;
   position: absolute;
@@ -92,36 +92,36 @@ export default {
   justify-content: center;
   align-items: stretch;
 
-  .okb-letter {
+  .oob-letter {
     position: relative;
 
-    .okb-image {
+    .oob-image {
       height: 100%;
       max-width: none;
     }
 
-    .okb-image-hover {
+    .oob-image-hover {
       position: absolute;
       top: 0;
       left: 0;
     }
 
-    .okb-image-k,
-    .okb-image-k-hover {
+    .oob-image-k,
+    .oob-image-k-hover {
       margin-left: -20px;
     }
 
-    .okb-image-a,
-    .okb-image-a-hover {
+    .oob-image-a,
+    .oob-image-a-hover {
       margin-left: -90px;
     }
 
-    .okb-image-y,
-    .okb-image-y-hover {
+    .oob-image-y,
+    .oob-image-y-hover {
       margin-left: 20px;
     }
 
-    .okb-image-hover {
+    .oob-image-hover {
       height: 100%;
       max-width: none;
       opacity: 1;
@@ -133,7 +133,7 @@ export default {
     }
   }
 
-  .okb-title-section-bears {
+  .oob-title-section-bears {
     height: 50%;
     position: absolute;
     bottom: 0;
@@ -141,7 +141,7 @@ export default {
   }
 }
 
-.okb-hover-titles {
+.oob-hover-titles {
   position: relative;
   top: -32vh;
   left: auto;
@@ -158,32 +158,32 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
 
-  .okb-hover-title {
+  .oob-hover-title {
     position: absolute;
     color: #bb9772;
   }
 }
 
 @media screen and (min-width: 1920px) {
-  .okb-titlesection {
+  .oob-titlesection {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex: 1;
   }
 
-  .okb-hover-titles {
+  .oob-hover-titles {
     top: -32vh;
   }
 
-  .okb-titlecontainer {
+  .oob-titlecontainer {
     flex-direction: column;
     justify-content: center;
   }
 }
 
 @media screen and (max-width: 991px) {
-  .okb-okay {
+  .oob-okay {
     max-height: 70vh;
     height: auto;
     padding: 0;
@@ -192,21 +192,21 @@ export default {
       height: 90%;
     }
 
-    .okb-image-hover,
-    .okb-image-a,
-    .okb-image-y,
-    .okb-title-section-bears {
+    .oob-image-hover,
+    .oob-image-a,
+    .oob-image-y,
+    .oob-title-section-bears {
       display: none;
     }
 
-    .okb-letter {
-      .okb-image-o,
-      .okb-image-k {
+    .oob-letter {
+      .oob-image-o,
+      .oob-image-k {
         height: 100%;
         width: 100%;
       }
 
-      .okb-image-k {
+      .oob-image-k {
         margin-left: 0;
       }
     }

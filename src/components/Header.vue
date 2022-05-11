@@ -1,7 +1,7 @@
 <template lang="pug">
-.okb-navbar
+.oob-navbar
     .nav-container
-        img.okb-logo(src="/img/OKB-Logo.png" loading="eager" width="100" alt="OKB-Logo")
+        img.oob-logo(src="/img/OOB-Logo.png" loading="eager" width="100" alt="oob-Logo")
         .spacer
         .menu-button(@click="isOverlayOpen = true")
             svg(viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg" style="width:15px; height:15px;")
@@ -9,13 +9,13 @@
                 path(d="M2.99054 15.5862C3.44365 15.904 3.89676 15.904 4.34987 15.904C5.61859 15.904 6.93262 16.0855 8.20133 15.9494C9.15287 15.8132 10.3763 15.904 11.509 15.904C11.5997 15.904 11.7356 15.8586 11.8715 15.8586C12.8231 15.677 13.7293 15.5862 14.6808 15.8586C14.8168 15.677 14.9074 15.4955 14.998 15.3139C14.7715 14.3154 14.8168 13.6345 14.8168 12.5906C14.5449 12.409 14.6355 11.9551 14.273 11.7736C14.273 11.7736 14.2277 11.7282 14.1371 11.6828C13.9105 11.7282 13.2309 12.0005 12.9137 11.7736C12.8231 11.7282 12.5512 11.7282 12.4606 11.819C12.0528 12.0459 12.1434 11.9097 11.7356 11.9097C10.331 11.9097 8.92631 11.7736 7.52166 11.7736C7.20448 11.819 6.88731 11.819 6.52482 11.9097C6.16233 12.0005 5.75453 12.0005 5.34673 12.0005H0.634356C0.4078 12.0005 0.181245 12.0005 0 12.2275V13.3168C0.0453111 13.7253 -2.8358e-07 14.043 0.135933 14.3607C0.271867 14.7692 0.226555 14.9962 0.090621 15.3139C0.226555 15.5409 0.271866 15.7678 0.543733 15.904C1.26871 15.8132 2.08431 16.0855 2.99054 15.5862Z")
                 path(d="M2.99253 3.90345C3.44564 4.22117 3.89875 4.22117 4.35186 4.22117C5.62058 4.22117 6.93461 4.40272 8.20332 4.26656C9.15486 4.13039 10.3783 4.22117 11.511 4.22117C11.6017 4.22117 11.7376 4.17578 11.8735 4.17578C12.8251 3.99422 13.7313 3.90344 14.6828 4.17578C14.8188 3.99422 14.9094 3.81267 15 3.63111C14.7734 2.63256 14.8188 1.95172 14.8188 0.907778C14.5469 0.726223 14.6375 0.272332 14.275 0.0907764C14.275 0.0907764 14.2297 0.045389 14.1391 0C13.9125 0.045389 13.2329 0.317721 12.9157 0.0907764C12.8251 0.0453876 12.5532 0.0453868 12.4626 0.136165C12.0548 0.363109 12.1454 0.226945 11.7376 0.226945C10.3329 0.226945 8.9283 0.0907764 7.52365 0.0907764C7.20647 0.136165 6.8893 0.136167 6.52681 0.226945C6.16432 0.317722 5.75651 0.317721 5.34871 0.317721H0.636349C0.409793 0.317721 0.183236 0.317721 0.00199121 0.544666V1.634C0.0473023 2.0425 0.0019892 2.36022 0.137923 2.67795C0.273856 3.08645 0.228546 3.31339 0.0926122 3.63111C0.228546 3.85806 0.273857 4.085 0.545724 4.22117C1.2707 4.13039 2.08631 4.40272 2.99253 3.90345Z")
         .regular-links
-            router-link.okb-nav-box(
+            router-link.oob-nav-box(
                 v-for="link in regularLinks"
                 :to="`/${link.href}`"
                 :class="{ 'active': link.name === activeLink, 'disabled': link.isDisabled }"
             ) {{ link.name.toUpperCase() }}
         .social-links
-            a.okb-menusociallink(
+            a.oob-menusociallink(
                 v-for="link in socialLinks"
                 :href="`https://${link.href}`"
                 target="_blank"
@@ -23,21 +23,21 @@
                 .logo(:class="`${link.name}-svg`")
                     svg(:width="link.width" :height="link.height" :viewBox="link.viewBox" fill="none" xmlns="http://www.w3.org/2000/svg")
                         path(fill="#bb9772" :d="link.path")
-    .okb-nav-overlay(:class="{hidden: !isOverlayOpen}")
-        img.okb-logo(src="/img/OKB-Logo.png" loading="eager" width="100" alt="OKB-Logo")
+    .oob-nav-overlay(:class="{hidden: !isOverlayOpen}")
+        img.oob-logo(src="/img/OOB-Logo.png" loading="eager" width="100" alt="oob-Logo")
         .spacer
         .menu-button(@click="isOverlayOpen = false")
             svg(viewBox="0 0 40 28" xmlns="http://www.w3.org/2000/svg")
                 path(d="M16.0801 12.0877C16.1758 12.6327 16.4962 12.9531 16.8166 13.2735C17.7137 14.1706 18.5145 15.2282 19.5079 16.029C20.277 16.6056 21.0779 17.5348 21.8789 18.3358C21.943 18.3999 22.0712 18.4639 22.1673 18.5601C22.9685 19.1045 23.6735 19.6811 24.1538 20.5465C24.3783 20.5143 24.5707 20.45 24.7632 20.3857C25.3091 19.5194 25.8225 19.07 26.5607 18.3318C26.4969 18.0112 26.8819 17.7543 26.754 17.3696C26.754 17.3696 26.754 17.3055 26.722 17.2093C26.5297 17.0812 25.8566 16.7932 25.7928 16.4084C25.7608 16.3123 25.5685 16.12 25.4403 16.1201C24.9914 15.9922 25.1518 15.96 24.8634 15.6717C23.8702 14.6785 22.9732 13.5889 21.98 12.5957C21.7236 12.4035 21.4994 12.1792 21.1789 11.9871C20.8583 11.795 20.57 11.5066 20.2816 11.2183L16.9495 7.88611C16.7893 7.72591 16.6291 7.56571 16.3404 7.59803L15.5702 8.3683C15.3134 8.6892 15.0567 8.88182 14.9281 9.2026C14.7354 9.58758 14.5429 9.71601 14.2221 9.84455C14.1577 10.1011 14.0293 10.2937 14.1252 10.5822C14.7021 11.0306 15.0862 11.7999 16.0801 12.0877Z")
                 path(d="M18.5467 18.4639C19.0917 18.3681 19.4121 18.0477 19.7325 17.7273C20.6296 16.8302 21.6872 16.0295 22.488 15.0361C23.0646 14.2669 23.9938 13.466 24.7948 12.6651C24.8589 12.601 24.9229 12.4728 25.019 12.3766C25.5635 11.5754 26.1401 10.8704 27.0055 10.3902C26.9732 10.1657 26.9089 9.97321 26.8446 9.78075C25.9784 9.23487 25.529 8.7214 24.7908 7.98322C24.4702 8.04708 24.2133 7.66205 23.8286 7.79C23.8286 7.79 23.7645 7.78994 23.6683 7.82192C23.5402 8.01422 23.2522 8.68738 22.8674 8.75119C22.7712 8.78318 22.579 8.97541 22.5791 9.10368C22.4512 9.55251 22.419 9.39215 22.1307 9.68051C21.1374 10.6737 20.0479 11.5707 19.0547 12.5639C18.8625 12.8203 18.6382 13.0446 18.4461 13.3651C18.254 13.6856 17.9656 13.974 17.6772 14.2623L14.3451 17.5945C14.1849 17.7547 14.0247 17.9149 14.057 18.2035L14.8273 18.9738C15.1482 19.2306 15.3408 19.4873 15.6616 19.6158C16.0466 19.8086 16.175 20.0011 16.3035 20.3219C16.5601 20.3862 16.7526 20.5147 17.0412 20.4187C17.4896 19.8419 18.2589 19.4577 18.5467 18.4639Z")
         .regular-links
-            router-link.okb-nav-box(
+            router-link.oob-nav-box(
                 v-for="link in regularLinks"
                 :to="`/${link.href}`"
                 :class="{ 'active': link.name === activeLink, 'disabled': link.isDisabled }"
             ) {{ link.name.toUpperCase() }}
         .social-links
-            a.okb-menusociallink(
+            a.oob-menusociallink(
                 v-for="link in socialLinks"
                 :href="`https://${link.href}`"
                 target="_blank"
@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style lang="scss">
-.okb-navbar {
+.oob-navbar {
   position: relative;
   z-index: 200000000;
   width: 100vw;
@@ -158,7 +158,7 @@ export default {
   color: #333333;
 }
 
-.okb-logo {
+.oob-logo {
   width: 7rem;
 }
 
@@ -171,7 +171,7 @@ export default {
   justify-content: flex-end;
   align-items: center;
 
-  .okb-nav-box {
+  .oob-nav-box {
     margin-right: 7.5px;
     margin-left: 7.5px;
     padding: 0.2rem 0.625rem;
@@ -212,7 +212,7 @@ export default {
   display: flex;
   justify-content: flex-end;
 
-  .okb-menusociallink {
+  .oob-menusociallink {
     display: flex;
     height: 28px;
     margin-right: 7.5px;
@@ -251,7 +251,7 @@ export default {
   }
 }
 
-.okb-nav-overlay {
+.oob-nav-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -282,7 +282,7 @@ export default {
     justify-content: flex-start;
     align-items: flex-start;
 
-    .okb-nav-box {
+    .oob-nav-box {
       margin-right: 0px;
       margin-bottom: 25px;
       margin-left: 0px;
@@ -305,7 +305,7 @@ export default {
     padding: 20px 30px;
     justify-content: flex-start;
 
-    .okb-menusociallink {
+    .oob-menusociallink {
       margin-right: 20px;
       margin-left: 0px;
     }
@@ -333,7 +333,7 @@ export default {
   }
 
   @media (orientation: landscape) {
-    .okb-nav-overlay .regular-links {
+    .oob-nav-overlay .regular-links {
       padding-top: 20px;
     }
   }
@@ -342,7 +342,7 @@ export default {
     display: flex;
   }
 
-  .okb-nav-overlay {
+  .oob-nav-overlay {
     display: block;
 
     &:not(.hidden) {
