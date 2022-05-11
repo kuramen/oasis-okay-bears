@@ -236,16 +236,6 @@ export default {
       cursor: not-allowed;
     }
 
-    &.blueprint {
-      background-color: #0d2a57;
-      color: #7eaeff;
-    }
-
-    &.blueprint:hover {
-      background-color: #7eaeff;
-      color: #003467;
-    }
-
     .logo:before,
     .logo:after {
       content: " ";
@@ -268,7 +258,7 @@ export default {
   width: calc(100vw - 60px);
   height: calc(100vh - 40px);
   padding: 20px 30px;
-  background-color: #008056;
+  background-color: #468696;
   transform: translateX(100vw);
   transition: transform 400ms ease 0s;
 
@@ -314,7 +304,6 @@ export default {
     display: flex;
     padding: 20px 30px;
     justify-content: flex-start;
-    background-image: linear-gradient(90deg, #008056, transparent 45%);
 
     .okb-menusociallink {
       margin-right: 20px;
